@@ -48,7 +48,7 @@ fight <- function(a, d, sims = 1000){
     dRecord[s, ] <- simOut$d
   }
   
-  message("Attacker wins ", 100 * sum(aRecord > 0) / sims, "%") 
+  message("Attacker survives ", 100 * sum(aRecord > 0) / sims, "%") 
 
   if(sum(aRecord > 0) / sims > 0.5){
     message("Attacker average loses: ", round(a - mean(aRecord), 2))
@@ -61,7 +61,7 @@ fight <- function(a, d, sims = 1000){
     message("Attacker average countries taken: ", taken)
   }
 
-  results <- list(attackerTroopsLeft = aRecord, defenderTroopsLeft = dRecord)
+  results <- list(attackerTroopsLeft = aRecord, defenderTroopsLeft = dRecord, attackerStart = a, defenderStart = d, sims = sims)
   class(results) <- 'riskr'
 
   return(invisible(results))
