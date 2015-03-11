@@ -20,7 +20,7 @@ NULL
 #'@param d A vector giving the number of defending units in successive defenders countries.
 #'
 #'@name fight
-
+#'@export
 
 fight <- function(a, d, sims = 1000){
   is.count(a)
@@ -50,6 +50,17 @@ fight <- function(a, d, sims = 1000){
   
   message("Attacker wins ", 100 * sum(aRecord > 0) / sims, "%") 
 
+  if(sum(aRecord > 0) / sims > 0.5){
+    message("Attacker average loses: ", round(a - mean(aRecord), 2))
+  } else {
+    message("Defender average loses: ", round(sum(d) - mean(rowSums(dRecord)), 2))
+  }
+    
+  if(length(d) > 1 & mean(aRecord == 0) > 0.5){
+    taken <- median(rowSums(dRecord == 0))
+    message("Attacker average countries taken: ", taken)
+  }
+
   results <- list(attackerTroopsLeft = aRecord, defenderTroopsLeft = dRecord)
   class(results) <- 'riskr'
 
@@ -59,7 +70,7 @@ fight <- function(a, d, sims = 1000){
 
 
 
-
+# Function to run one simulation
 
 runSim <- function(a, d, count, dice){
   # Run a simulation
