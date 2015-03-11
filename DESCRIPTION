@@ -1,0 +1,16 @@
+Package: riskr
+Type: Package
+Title: Calculate Risk battle odds.
+Version: 0.1
+Date: 11/03/15 
+Author: Tim Lucas,
+Maintainer: Tim Lucas <timcdlucas@gmail.com>
+Description: A package to run simulations of Risk battles and get battle odds. Allows sequence of defender territories.
+License: dwtfyw
+Imports:
+Suggests:
+    knitr,
+    testthat
+VignetteBuilder: knitr
+LazyData: true
+URL: https://github.com/timcdlucas/riskr
