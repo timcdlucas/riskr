@@ -12,7 +12,7 @@ print.riskr <- function(f){
   if(length(f$defenderStart) == 1){
     cat(paste('Risk battle odds for', f$attackerStart, 'attackers and', f$defenderStart, 'defenders:\n'))
   } else {
-    cat(paste('Risk battle odds for', f$attackerStart, 'attackers and\n', sum(f$defenderStart), 'defenders in', length(d), 'territories:\n' ))
+    cat(paste('Risk battle odds for', f$attackerStart, 'attackers and\n', sum(f$defenderStart), 'defenders in', length(f$defenderStart), 'territories:\n' ))
   }
   
   cat('\n')
