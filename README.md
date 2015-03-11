@@ -43,6 +43,25 @@ Also set the number of defensive units. This can be a single number, or a vector
     fight(a = 20, d = 20, sims = 2000)
 
 
+For more details, save the object and either plot it or get a short summary by printing.
+
+    > f <- fight(a = 20, d = c(3, 4, 1, 10))
+    Attacker wins 60.7%
+    Attacker average loses: 16.5
+    
+    > f
+    Risk battle odds for 20 attackers and
+     18 defenders in 5 territories:
+
+    Attacker survives 60.7%
+    Attacker average loses: 16.5
+
+
+    From 1000 simulations.
+    > plot(f)
+
+    
+
 
 
 Next steps
@@ -55,6 +74,6 @@ If you would like to add any thing, pull and push away.
 
 To do: 
 - Write a summary function that tells you how many units the attacker has left or how many countries they took if all their units died.
-- Plot histograms.
+- Improve histograms.
 
 
